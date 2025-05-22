@@ -1,4 +1,6 @@
 Make sure to report any bugs or issues in the Issues tab!
+= May 22, 2025 | VERSION 1.21 =
+ -  Foxed a missing image
 = May 21, 2025 | VERSION 1.2 =
  -  Added a new settings feature where you can use JSON files to set up locations
 = May 5, 2025 | VERSION 1.11 =
