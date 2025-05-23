@@ -354,7 +354,7 @@ button {
   width: 1620px;
   height: 1080px;
   z-index: 10005;
-  background-image: url(images/setup/jsonconfig-setup.png);
+  background-image: url(images/setup/mainloc-setup.png);
   background-size: 100% 100%;
 }
 #mainloc-dropdown {
