@@ -153,6 +153,16 @@ button {
   top: 370px;
   right: 80px
 }
+.json-warning {
+  position: absolute;
+  z-index: 50;
+  color: #ff4040;
+  background-color: #000000a0;
+  padding: 16px;
+  font-size: 24px;
+  top: 670px;
+  right: 578px
+}
 .start-button {
   position: absolute;
   cursor: pointer;
@@ -265,6 +275,13 @@ button {
   left: 11%;
   opacity: 0;
 }
+#setup-welcome .uploadjson-button {
+  position: absolute;
+  height: 70px;
+  width: 670px;
+  top: 74%;
+  left: 11%;
+}
 .setup-list {
   position: absolute;
   width: 1620px;
@@ -305,6 +322,32 @@ button {
 }
 .list-indicators .indic.five {
   top: 75%;
+}
+#setup-jsonconfig {
+  position: absolute;
+  width: 1620px;
+  height: 1080px;
+  z-index: 10005;
+  background-image: url(images/setup/jsonconfig-setup.png);
+  background-size: 100% 100%;
+}
+#setup-jsonconfig #templateDownload {
+  top: 497px;
+  left: 448px;
+}
+#setup-jsonconfig .upload-container {
+  position: absolute;
+  top: 500px;
+  right: 10px;
+}
+#setup-jsonconfig button#uploadButton {
+  position: absolute;
+  left: 0%;
+  top: 60px;
+  font-size: 40px;
+}
+#setup-jsonconfig input#fileInput {
+  font-size: 40px;
 }
 #setup-mainloc {
   position: absolute;
@@ -571,6 +614,10 @@ button {
   top: 62%;
   left: 41.1%;
   opacity: 0;
+}
+#setup-thankyou .jsonsave-button {
+  top: 770px;
+  left: 610px;
 }
 /*END OF SETTINGS PANEL*/
 #startup {

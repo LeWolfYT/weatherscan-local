@@ -1,4 +1,12 @@
 Make sure to report any bugs or issues in the Issues tab!
+= May 23, 2025 | VERSION 1.22 =
+ -  Fixed wrong background for the main location setup
+ -  Fixed airport delay grab
+ -  Sim now requires node-fetch, if this dependency is not installed, run "npm i" again or run "npm i node-fetch@2"
+= May 22, 2025 | VERSION 1.21 =
+ -  Foxed a missing image
+= May 21, 2025 | VERSION 1.2 =
+ -  Added a new settings feature where you can use JSON files to set up locations
 = May 5, 2025 | VERSION 1.11 =
  -  Fixed the rest of the radar cutting off half of the screen
 = May 4, 2025 | VERSION 1.1 =

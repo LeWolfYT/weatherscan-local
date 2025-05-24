@@ -129,8 +129,8 @@ function startButton() {
   //document.cookie = "skipSetup=true";
   locationJS();
   setTimeout(() => {
-    console.log(locationSettings)
-    console.log(locationConfig)
+    //console.log(locationSettings)
+    //console.log(locationConfig)
     dataJS();
     //createMaps();
   }, 1000);
@@ -185,7 +185,54 @@ function welcomefuncs(type) {
     slideSettings.order[0].slideLineup.push(healthPackage);
     slideSettings.order[0].slideLineup.push(airportPackage);
     //console.log(document.cookie);
+  } else if (type == "json") {
+    $("#setup-welcome").fadeOut(0);
+    $("#setup-jsonconfig").fadeIn(0);
   }
+}
+function jsonFuncs() {
+  //credit: MapGuy
+  const fileInput = document.getElementById('fileInput');
+  const file = fileInput.files[0];
+  if (!file) {
+    $('.json-warning').fadeIn(0)
+    return;
+  }
+
+  const reader = new FileReader();
+  reader.onload = function(e) {
+    try {
+      const json = JSON.parse(e.target.result);
+      Object.assign(locationSettings, json.jsonLocationSettings);
+      console.log("Updated location settings:", locationSettings);
+      $('#setup-jsonconfig').fadeOut(0)
+      $('#setup-packages').fadeIn(0)
+
+    } catch (err) {
+      console.error("Error parsing JSON:", err);
+      $('.json-warning').fadeIn(0)
+    }
+  };
+  reader.readAsText(file);
+}
+function downloadTempJson() {
+  let url = "configs/templateconfig.json"
+  const a = document.createElement('a')
+  a.href = url
+  a.download = url.split('/').pop()
+  document.body.appendChild(a)
+  a.click()
+  document.body.removeChild(a)
+
+}
+function jsonsaveButton() {
+  var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(locationSettings));
+  var downloadAnchorNode = document.createElement('a');
+  downloadAnchorNode.setAttribute("href",     dataStr);
+  downloadAnchorNode.setAttribute("download", "config.json");
+  document.body.appendChild(downloadAnchorNode); // required for firefox
+  downloadAnchorNode.click();
+  downloadAnchorNode.remove();
 }
 function mainlocfuncs(type) {
   if (type == "skip") {
